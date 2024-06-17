@@ -17,6 +17,16 @@ public class ReverseArray {
 
     }
 
+    public static <T> T[] reversArray(T[] array){
+        for(int i=0, middle = array.length>>1, j=array.length-1 ; i<middle;i++,j--){
+            T element = array[j];
+            array[j] = array[i];
+            array[i] = element;
+        }
+        return  array;
+    }
+
+
     public static void reverse(int[] arr){
        int temp;
         for(int i =0;i< arr.length/2;i++){

@@ -7,14 +7,20 @@ public class PalindromeString {
         char[] c = str.toCharArray();
         int start = 0;
         int end = str.length() - 1;
-        while (start < end) {
-            if (c[start] != c[end]) {
+//        while (start < end) {
+//            if (c[start] != c[end]) {
+//                return false;
+//
+//            }
+//            start++;
+//            end--;
+        while(start<end){
+            if(c[start]!=c[end]){
                 return false;
-
             }
-            start++;
-            end--;
         }
+        start++;
+        end--;
         return true;
     }
 

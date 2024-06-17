@@ -4,7 +4,7 @@ public class NonRepatedElements {
 
 public void nonRepatedElementArray(int arr[])
 {
-    for(int i =0;i<arr.length;i++){
+    for(int i =0;i<arr.length-1;i++){
         int count =0;
         for(int j=0;j< arr.length;j++){
             if(arr[i] == arr[j]){
@@ -19,6 +19,7 @@ public void nonRepatedElementArray(int arr[])
 
     public void elementCountArray(int[] arr)
     {
+        int freq[] = new int[arr.length];
         for(int i =0;i<arr.length;i++){
             int count =0;
             for(int j=0;j< arr.length;j++){

@@ -2,16 +2,19 @@ package com.company.string;
 
 import java.util.Arrays;
 
-public class Main {
+public class Test{
     public static void main(String[] args) {
         PalindromeString palindromeString = new PalindromeString();
-        System.out.println("str is plaindrome "+palindromeString.isPalindrome("madam"));
+        AddString.addString("11","123");
+        LongestCommonPrefix cmn = new LongestCommonPrefix();
+//        System.out.println(cmn.hasCommonPref(new String[]{"flow","flower","flew"}));
+//         System.out.println("str is plaindrome "+palindromeString.isPalindrome("madam"));
         System.out.println("string is palindrome: "+
                 PalindromeString.removeSpecialChar("0p"));
         ReverseEachWord.reverseWordsString("This is Java");
         System.out.println();
       Anagram anagram = new Anagram();
-        anagram.isAngaram2("book","boko");
+        anagram.anagram("book","boko");
 
 //        anagram.anagram("keep","peek");
         ReverseString rs = new ReverseString();

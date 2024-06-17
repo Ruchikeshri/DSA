@@ -35,8 +35,7 @@ public class Anagram {
         }
         if(isAnagram){
             System.out.println("it is anagram");
-        }
-        else{
+        } else{
             System.out.println("not a anagram");
         }
     }
@@ -45,10 +44,13 @@ public class Anagram {
         if(s1.length() != s2.length()){
             return false;
         }
-        Arrays.sort(s1.toLowerCase().toCharArray());
-        Arrays.sort(s2.toLowerCase().toCharArray());
+        char c1[]=  s1.toLowerCase().toCharArray();
+        char c2[] = s2.toLowerCase().toCharArray();
 
-         boolean isAanagram = Arrays.equals(s1.toCharArray(),s2.toCharArray());
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+
+         boolean isAanagram = Arrays.equals(c1,c2);
          if(isAanagram){
              System.out.println("strings are an Anagram");
          }else {
