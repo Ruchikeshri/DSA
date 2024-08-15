@@ -2,7 +2,7 @@ package com.company.stack;
 
 import java.util.Stack;
 
-public class Main {
+public class SortStack {
 
     public static void sortStack(Stack<Integer> stack) {
         Stack<Integer> auxiliaryStack = new Stack<>();

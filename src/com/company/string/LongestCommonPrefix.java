@@ -16,7 +16,7 @@ public class LongestCommonPrefix {
         }
         String pref = str[0];
         for(int i=1;i< str.length;i++){
-            int j =str[i].indexOf(pref);
+//            int j =str[i].indexOf(pref);
             while(str[i].indexOf(pref)!=0){
                 pref = pref.substring(0,pref.length()-1);
             }

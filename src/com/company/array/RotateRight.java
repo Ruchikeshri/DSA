@@ -15,25 +15,9 @@ public class RotateRight {
         public static void rotate(int nums[], int k){
 
             k = k% nums.length;
-
-            for(int start =0,end = nums.length-k-1; start<end; start++,end--){
-                int temp = nums[start];
-                nums[start] = nums[end];
-                nums[end] = temp;
-            }
-
-            for(int start = nums.length-k, end = nums.length -1; start<end; start++,end--){
-                int temp = nums[start];
-                nums[start] = nums[end];
-                nums[end] = temp;
-            }
-
-            for(int start =0,end = nums.length-1; start<end; start++, end--){
-                int temp = nums[start];
-                nums[start] = nums[end];
-                nums[end] = temp;
-            }
-
+//            reverse(nums, 0, nums.length-1);
+//        reverse(nums,0,k-1);
+//        reverse(nums,k,nums.length-1);
             // for (int i = 0; i < k; i++) {
             //     int temp = nums[nums.length-1];
             //     for (int j =nums.length-1; j >0; j--) {
@@ -41,18 +25,47 @@ public class RotateRight {
             //     }
             //     nums[0] = temp;
             // }
+//            for (int i = 0; i < k; i++) {
+//                int temp = nums[nums.length-1];
+//                for (int j = nums.length-1; j>0 ;j--) {
+//                    nums[j] = nums[j - 1];
+//                }
+//                nums[0] = temp;
+//            }
+
+
+            for ( int i =0; i<k;i++){
+                int temp =nums[0] ;
+                for(int j=1; j<nums.length; j++){
+                    nums[j-1]=nums[j];
+                }
+                nums[nums.length-1]=temp;
+
+            }
 
 
 
         }
 
+    private static void reverse(int[] nums, int start, int end) {
+            while (start<end) {
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+
+                start++;
+                end--;
+            }
+
+    }
 
 
-        public static void main(String[] args) {
-            int[] nums1 = {1, 2, 3, 4, 5, 6, 7};
-            int k1 = 3;
+    public static void main(String[] args) {
+            int[] nums1 = {1, 2, 3, 4, 5};
+            int k1 = 2;
             rotate(nums1, k1);
             System.out.println("Test case 1: Rotated array: " + Arrays.toString(nums1));  // prints "Rotated array: [5, 6, 7, 1, 2, 3, 4]"
+// prints "Rotated array: [5, 6, 7, 1, 2, 3, 4]"
 
             int[] nums2 = {-1, -100, 3, 99};
             int k2 = 2;

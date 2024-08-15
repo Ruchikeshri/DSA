@@ -103,7 +103,7 @@ public class StackUsingLinkedList {
         myStack.printAll();
         myStack.push(2);
         myStack.printAll();
-        myStack.pop();
+        System.out.println(myStack.pop());
         myStack.printAll();
         myStack.pop();
         myStack.printAll();

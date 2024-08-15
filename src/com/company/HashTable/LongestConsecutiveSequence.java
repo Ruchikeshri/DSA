@@ -1,9 +1,6 @@
 package com.company.HashTable;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LongestConsecutiveSequence {
 
@@ -23,7 +20,7 @@ public class LongestConsecutiveSequence {
             if (!set.contains(num - 1)) {
                 int currentNum = num; // This number is the start of a new sequence.
                 int currentSequenceLength = 1; // Initialize the current sequence length to 1.
-                currentSequence.add(currentNum);
+//                currentSequence.add(currentNum);
                 // Step 4: Incrementally check the next numbers in the sequence.
                 while (set.contains(currentNum + 1)) {
                     currentNum++; // Move to the next number in the sequence.
@@ -38,9 +35,30 @@ public class LongestConsecutiveSequence {
         }
         return longestSequence; // Return the length of the longest consecutive sequence.
     }
+        public static int longestConsecutive(int[] nums) {
+
+            HashMap<Integer,Integer> map = new HashMap<>();
+            int longestLength =1;
+            int currentLongest=1;
+
+            Arrays.sort(nums);
+
+            for(int i=1;i<nums.length;i++) {
+                if (nums[i] != nums[i - 1]) {
+                    if (nums[i] == nums[i - 1] + 1) {
+                        currentLongest++;
+                    } else {
+                        longestLength = Math.max(currentLongest, longestLength);
+                        currentLongest = 1;
+
+                    }
+                }
+            }
+            return Math.max(longestLength,currentLongest);
+        }
 
     public static void main(String[] args) {
         int[] nums = {100, 4, 200, 1, 3, 2};
-        System.out.println("Length of longest consecutive sequence: " + longestConsecutiveSequence(nums));
+        System.out.println("Length of longest consecutive sequence: " + longestConsecutive(nums));
     }
 }

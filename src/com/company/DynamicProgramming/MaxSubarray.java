@@ -35,15 +35,24 @@ public class MaxSubarray {
         public static int maxSubArray(int[] nums) {
             int n = nums.length;
             int maxSum = Integer.MIN_VALUE;
+            int start=0, end =0;
 
             for (int i = 0; i < n; i++) {
                 int currentSum = 0;
                 for (int j = i; j < n; j++) {
                     currentSum += nums[j];
-                    maxSum = Math.max(maxSum, currentSum);
+//                    maxSum = Math.max(maxSum, currentSum);
+                    if(currentSum> maxSum){
+                        maxSum = currentSum;
+                        start = i;
+                        end = j;
+                    }
                 }
             }
-
+  for(int i= start;i<=end;i++){
+      System.out.print(nums[i] + " ");
+  }
+            System.out.println();
             return maxSum;
         }
 
@@ -52,8 +61,9 @@ public class MaxSubarray {
 
 
     public static void main(String args[]){
-        int arr[] = {-2,1,-3,4,-1,2,1,-5,4
-//                4,3,-2,6,-12,7,-1,6
+        int arr[] =
+//                {-2,1,-3,4,-1,2,1,-5,4
+                {4,3,-2,6,-12,7,-1,6
         };
         System.out.println(maxSubArray(arr));
 //        System.out.println(NaiveMaxSubarray.maxSubArray(arr));

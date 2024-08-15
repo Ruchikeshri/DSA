@@ -1,5 +1,7 @@
 package com.company.array;
 
+import com.company.HashTable.SubArray;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +47,7 @@ public class Main {
         finalArray.forEach(arrayChunck->System.out.print(Arrays.toString(arrayChunck)));
         SubArray sa = new SubArray();
         System.out.println();
-        System.out.println("subarray count "+SubArray.subarraySum(new int[]{1,1,1},1));
+        System.out.println("subarray count "+SubArray.subarraySums(new int[]{1,1,1},1));
 
     }
 

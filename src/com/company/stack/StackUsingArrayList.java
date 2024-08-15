@@ -28,7 +28,7 @@ public class StackUsingArrayList<T> {
      if(isEmpty()){
          return null;
      } else {
-       return   stack.get(stack.size()-1);
+       return stack.get(stack.size()-1);
      }
     }
 
@@ -49,6 +49,7 @@ public class StackUsingArrayList<T> {
             myStack.push(2);
             myStack.push(3);
 
+            System.out.println(myStack.peek());
             System.out.println("Stack before pop():");
             myStack.printStack();
 

@@ -1,11 +1,11 @@
-package com.company.array;
+package com.company.HashTable;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class SubArray {
 
-    public static int subarraySum(int[] nums, int k) {
+    public static int subarraySums(int[] nums, int k) {
 
         int count = 0;
 
@@ -34,4 +34,10 @@ public class SubArray {
         return count;
         }
 
+    public static void main(String[] args) {
+        SubArray sa = new SubArray();
+        System.out.println();
+        System.out.println("subarray count "+SubArray.subarraySums(new int[]{1,2,3},6));
+
+    }
     }

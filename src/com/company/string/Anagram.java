@@ -1,6 +1,7 @@
 package com.company.string;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class Anagram {
@@ -57,6 +58,21 @@ public class Anagram {
              System.out.println("not an anagram");
          }
         return  true;
+    }
+
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        HashMap<Character, Integer> charCount = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+        for (char c : t.toCharArray()) {
+            if (!charCount.containsKey(c)) return false;
+            charCount.put(c, charCount.get(c) - 1);
+            if (charCount.get(c) < 0) return false;
+        }
+        return true;
     }
 }
 

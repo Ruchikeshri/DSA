@@ -1,5 +1,8 @@
 package com.company.array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ReverseArray {
     public static void reverseArray(int arr[],int start,int end){
         while (start<end){
@@ -28,12 +31,14 @@ public class ReverseArray {
 
 
     public static void reverse(int[] arr){
+        System.out.println("Before Array"+ Arrays.toString(arr));
        int temp;
         for(int i =0;i< arr.length/2;i++){
            temp = arr[i];
            arr[i]= arr[arr.length-1-i];
            arr[arr.length-1-i] = temp;
         }
+        System.out.println("reversed Array");
 
         for(int k:arr){
             System.out.print(k+" ");

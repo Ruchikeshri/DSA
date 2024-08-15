@@ -24,21 +24,22 @@ public class CommonCharacter {
 
   public StringBuilder cmnCharacter(String a,String b) {
       Set cmnChar = new HashSet <>();
-      List <Character> chars = new ArrayList <>();
+//      List <Character> chars = new ArrayList <>();
       StringBuilder sb = new StringBuilder();
 
 
       for (int i = 0; i < a.length(); i++) {
           char c = a.charAt(i);
           if (b.indexOf(c) != -1) {
-              chars.add(Character.valueOf(c).charValue());
+//              chars.add(Character.valueOf(c).charValue());
+              sb.append(c);
           }
       }
-          Iterator<Character> itr = chars.iterator();
-          while(itr.hasNext()){
-              sb.append(itr.next().charValue()+ "");
-
-      }
+//          Iterator<Character> itr = chars.iterator();
+//          while(itr.hasNext()){
+//              sb.append(itr.next().charValue()+ "");
+//
+//      }
       return sb;
   }
 

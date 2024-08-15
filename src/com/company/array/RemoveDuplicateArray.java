@@ -8,7 +8,6 @@ public class RemoveDuplicateArray {
         if(nums == null|| nums.length ==0){
             return 0;
         }
-        Arrays.sort(nums);
 
         int uniqueCount = 1; // At least one unique element (the first one)
 
