@@ -22,11 +22,13 @@ public class Anagram {
 
         for (int i = 0; i < c1.length; i++) {
             frequencyChar[c1[i]]++;
-        }
-
-        for (int i = 0; i < c2.length; i++) {
             frequencyChar[c2[i]]--;
         }
+
+        // do in single loop
+//        for (int i = 0; i < c2.length; i++) {
+//            frequencyChar[c2[i]]--;
+//        }
 
 
         for (int i : frequencyChar) {

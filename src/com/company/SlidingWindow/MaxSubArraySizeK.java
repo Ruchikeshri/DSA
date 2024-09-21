@@ -1,4 +1,4 @@
-package com.company.SlidingWindow;
+        package com.company.SlidingWindow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,20 @@ public class MaxSubArraySizeK {
             throw new IllegalArgumentException("Invalid window size");
         }
         int i = 0, j = 0;
-        int sum = 0, maxSum = 0;
+        int sum  = 0, maxSum = 0, start =0,end =0;
         while (j < size) {
             sum += arr[j];
             if (j - i + 1 == k) {
                 list.add(sum);
-                maxSum = Math.max(sum, maxSum);
+//                maxSum = Math.max(sum, maxSum);
+                if(sum> maxSum){
+                    maxSum = sum;
+                    start =i;
+                    end = j;
+                }
                 sum = sum - arr[i];
+
+                System.out.println(start + " " +  end);
                 i++;
             }
             j++;
@@ -44,7 +51,7 @@ public class MaxSubArraySizeK {
             if (windowSum > maxSum) {
                 maxSum = Math.max(windowSum, maxSum);
                 start = i + 1;
-                end = i + k;
+                end =  i + k;
             }
         }
         for (int j = start; j <= end; j++) {
@@ -100,7 +107,7 @@ public class MaxSubArraySizeK {
         if (k > arr.length) {
             throw new IllegalArgumentException("size not valid");
         }
-         int windowSum=0,maxSum=0;
+        int windowSum=0,maxSum=0;
         for (int i = 0; i <k;i++) {
             windowSum+= arr[i];
         }
@@ -111,8 +118,6 @@ public class MaxSubArraySizeK {
             maxSum = Math.max(windowSum,maxSum);
 
         }
-
-
         return maxSum;
     }
         public static void main(String[] args) {
@@ -122,5 +127,6 @@ public class MaxSubArraySizeK {
         System.out.println(maxSumSubarraySizeK(nums, k));
         System.out.println(maxSumSubarraySizeKPrefixSum(nums, k)); // Output: 24 (7+8+9)
         System.out.println(maxSumSubarraySizeKBruteForce(nums,k));
+        System.out.println(maxSubarrayk(nums,k));
     }
 }

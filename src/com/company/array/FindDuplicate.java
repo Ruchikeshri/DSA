@@ -1,6 +1,6 @@
 package com.company.array;
 
-public class Test {
+public class FindDuplicate {
     public static int findDuplicate_mark(int[] nums) {
         for (int num : nums) {
             // Get the absolute value to ensure we always get a non-negative index
@@ -33,7 +33,7 @@ public class Test {
     }
     public static void main(String[] args) {
         int[] nums = {3, 1, 3, 4, 2};
-        int duplicate = findDuplicate(nums);
+        int duplicate = findDuplicate_mark(nums);
         System.out.println("Duplicate number: " + duplicate); // Output: 3
     }
 }

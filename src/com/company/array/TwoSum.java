@@ -9,12 +9,16 @@ public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> numsMap = new HashMap<>();
 
-        //  1,2,3,4 - 6
+        //  1,2,4 - 6
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
-            if (numsMap.containsKey(complement)) {
-                return new int[]{numsMap.get(complement), i};
+            if (numsMap.containsKey(complement)){
+//                if(numsMap.containsKey(nums[i])){
+//                           return new int[]{numsMap.get(nums[i]),i};
+                return new int[]{numsMap.get(complement),i};
             }
+//            numsMap.put(complement, i);
+
             numsMap.put(nums[i], i);
         }
 //        throw new IllegalArgumentException("No two sum Solution");

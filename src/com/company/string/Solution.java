@@ -1,48 +1,26 @@
 package com.company.string;
 
-
-
-
 class Solution {
+    public static String mergeAlternately(String word1, String word2) {
 
-    public static boolean isSubsequence(String s, String t) {
-
-        int start = 0;
-
-        int i = 0;
-        while(i<s.length() && start<t.length()) {
-            if (s.charAt(i) == t.charAt(start)) {
-                i++;
-            }
-            start++;
+     int lastIndex =0;
+     StringBuilder sb = new StringBuilder();
+        for(int i=0;i<Math.min(word1.length(),word2.length());i++){
+            sb.append(word1.charAt(i));
+            sb.append(word2.charAt(i));
+            lastIndex =i;
         }
-        return i == s.length();
+           lastIndex++;
+        if(word1.length()>word2.length()){
+            sb.append(word1.substring(lastIndex));
+        } else {
+            sb.append(word2.substring(lastIndex));
+        }
 
-
+        return sb.toString();
     }
-
-
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLastWord("Hello World"));
-        System.out.println(isSubsequence("abc","ahbgdc"));
+        System.out.println(mergeAlternately("abc","pqrs"));
     }
-
-    public static int lengthOfLastWord(String s) {
-
-        String splitStr[] = s.split("\\s+");
-
-
-        String lastWord = splitStr[splitStr.length - 1];
-
-        return lastWord.length();
-
-    }
-
-
-
-
-
-
-
 }

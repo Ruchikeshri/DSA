@@ -1,40 +1,58 @@
 package com.company.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-class Solution
-{
-    //Function to find a continuous sub-array which adds up to a given number.
-    static ArrayList<Integer> subarraySum(int[] arr, int n, int s)
-    {
-        // Your code here
-        int currSum = 0;
-        int start =0;
-        List<Integer> list = new ArrayList<>();
-        for(int end=0;end<arr.length;end++){
-            currSum= currSum+ arr[end];
+class ContainsNearByDuplicate {
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> set = new HashSet<>(); //nums = 1,0,2,1 k=1
 
-            while (currSum>s){
-                currSum-= arr[start];
-                start++;
-
+        for (int i = 0; i < nums.length; i++) {
+            if (set.contains(nums[i])) {
+                return true; // Found a duplicate within the window
             }
-            if(currSum == s){
-                list.add(start+1);
-                list.add(end+1);
-                return (ArrayList<Integer>) list;
+
+            set.add(nums[i]);
+
+            // Maintain the window size to be exactly k
+            if (set.size() > k) {
+                set.remove(nums[i - k]); // Remove the oldest element in the window
             }
         }
-        return (ArrayList<Integer>) list;
 
+        return false; // No duplicates found within the given window size
+
+//        public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+//            int j=1;
+//            for(int i=0;i<nums.length;i++){
+//
+//                while(j <= i + k && j <nums.length){
+//                    if(nums[i] == nums[j] ){
+//                       return true;
+//                    }
+//                    j++;
+//
+//                }
+//
+//            }
+//co
+//        return false;
     }
 
     public static void main(String[] args) {
-        Solution s = new Solution();
-        System.out.println(s.subarraySum(new int[]{1,2,3,7,5},5,12)
-        );
+//        Solution solution = new Solution();
+        int[] nums1 = {1, 2, 3, 1};
+        int k1 = 3;
+        System.out.println(ContainsNearByDuplicate.containsNearbyDuplicate(nums1, k1)); // Output: true
 
+        int[] nums2 = {1, 0, 1, 1};
+        int k2 = 1;
+        System.out.println(ContainsNearByDuplicate.containsNearbyDuplicate(nums2, k2)); // Output: true
+
+        int[] nums3 ={1,2,3,1,2,3};
+//                {1, 2, 3, 1, 2, 3};
+        int k3 = 2;
+        System.out.println(ContainsNearByDuplicate.containsNearbyDuplicate(nums3, k3)); // Output: false
     }
 }

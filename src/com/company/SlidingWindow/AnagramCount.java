@@ -62,7 +62,6 @@ return result;
                     if(charFreq.get(s.charAt(i)) == 0){
                         count++;
                     }
-
                     charFreq.put(s.charAt(i),charFreq.get(s.charAt(i))+1);
                 }
                 i++;
@@ -138,10 +137,16 @@ return result;
         String s = "cbaebabacd";
         String p ="abc";
         List<String> anagram = findAnagrams(s,p);
-//        List<String> anagrams =    findAnagramsBruteForce(s,p);
-        List<String> anagrams = findAnagramUsingCount(s,p);
+        List<String> anagrams =    findAnagramsBruteForce(s,p);
+        List<String> anagrams2 = findAnagramUsingCount(s,p);
+        List<String> anagramsUsingEquals= findAnagramsUsingEquals(s,p);
+
         System.out.println("Anagram Found: "+anagram);
         System.out.println("Anagram Found: "+anagrams);
+        System.out.println("Anagram Found: "+anagrams2);
+        System.out.println("Anagram Found" + anagramsUsingEquals);
+
+
 //        System.out.println("Angaram Found",+ana);
 
     }
