@@ -15,6 +15,11 @@ class Node {
 
 public class LinkedListLoopDetection {
 
+    public Node head;
+    private int length;
+
+
+
     // Method to detect a loop in the linked list
     public boolean hasLoop(Node head) {
         HashSet<Node> visitedNodes = new HashSet<>();
@@ -50,6 +55,9 @@ public class LinkedListLoopDetection {
 
         // Creating an instance of the LinkedListLoopDetection class
         LinkedListLoopDetection list = new LinkedListLoopDetection();
+
+
+
 
         // Checking if the linked list has a loop
         // Creating an instance of the LinkedListLoopDetection class

@@ -3,7 +3,7 @@ package com.company.LinkedList;
 public class DoublyLinkedListUsingUdemy {
 
     private Node head;
-    private Node tail;
+     Node tail;
     private int length;
 
     class Node {

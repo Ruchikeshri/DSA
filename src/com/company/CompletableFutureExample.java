@@ -10,9 +10,15 @@ import java.util.concurrent.ExecutionException;
 
     public class CompletableFutureExample {
 
+
+
+
         public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+
             // Create a list of CompletableFuture representing asynchronous tasks
             List<CompletableFuture<Boolean>> futures = new ArrayList<>();
+
 
             // Adding some CompletableFuture objects with randomly completed tasks (true or false)
             for (int i = 0; i < 5; i++) {

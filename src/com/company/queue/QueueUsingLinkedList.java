@@ -1,5 +1,8 @@
 package com.company.queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class QueueUsingLinkedList {
 
     private Node first;
@@ -10,6 +13,7 @@ public class QueueUsingLinkedList {
         Node next;
         int value;
 
+
         public Node(int value){
             this.value = value;
         }
@@ -17,6 +21,7 @@ public class QueueUsingLinkedList {
 
     public QueueUsingLinkedList(int value){
         Node newNode = new Node(value);
+        Queue<Node> node = new LinkedList<>();
         first = newNode;
         last = newNode;
         length =1;

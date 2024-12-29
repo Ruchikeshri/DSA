@@ -2,12 +2,18 @@ package com.company.SlidingWindow;
 
 import com.company.HashTable.Solution;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ContainsNearByDuplicate {
 
     public static boolean containsNearByDuplicate(int nums[],int k)
     {
         for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<=i+k&& j<nums.length;j++){
+            for(int j=i+1;
+//                j<=i+k
+//                    &&
+            j<nums.length && j-i<=k;j++){
                 if(nums[i] == nums[j]){
                     return true;
                 }
@@ -15,6 +21,31 @@ public class ContainsNearByDuplicate {
         }
         return false;
     }
+
+
+
+        public static boolean containsNearbyDuplicate(int[] nums, int k) {
+            Set<Integer> window = new HashSet<>();
+
+            for (int i = 0; i < nums.length; i++) {
+                // If the current element already exists in the set, we found a duplicate
+                if (window.contains(nums[i])) {
+                    return true;
+                }
+
+                // Add the current element to the sliding window set
+                window.add(nums[i]);
+
+                // Maintain the window size of at most k elements
+                if (window.size() > k) {
+                    window.remove(nums[i - k]); // Remove the element that is out of the window
+                }
+            }
+
+            return false; // No duplicates found within the given range
+        }
+
+
 
 
     public static void main(String[] args) {

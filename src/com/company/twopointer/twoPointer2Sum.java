@@ -18,8 +18,10 @@ public class twoPointer2Sum {
 //        }
 
         int left =0, right = nums.length -1;
+        int sum=0;
+
         while(left < right){
-            int sum = nums[left] + nums[right];
+             sum = nums[left] + nums[right];
             if(sum == target){
                 return new int[]{left, right};
             } else if(sum < target){

@@ -113,7 +113,7 @@ public class LinkedListUsingUdemy {
     Node prevM = dummy;
 
     // Move prevM to the node before position m
-    for (int i = 1; i < m; i++) {
+    for (int i = 0; i < m; i++) {
         if (prevM.next == null) {
             return; // Invalid position
         }
@@ -140,9 +140,9 @@ public class LinkedListUsingUdemy {
     prevM.next.next = current; // Connect the end of reversed sublist to node after n
     prevM.next = prev; // Connect node before m to the start of reversed sublist
 
-    if (m == 1) {
-        head = prev; // Update head if reversing from the beginning
-    }
+//    if (m == 1) {
+//        head = prev; // Update head if reversing from the beginning
+//    }
                
     }
     public static void main(String[] args) {
@@ -154,13 +154,28 @@ public class LinkedListUsingUdemy {
         myLinkedList.append(4);
         myLinkedList.append(5);
 
+        LinkedListUsingUdemy myLinkedList1 = new LinkedListUsingUdemy(12);
+        myLinkedList1.append(13);
+        myLinkedList1.append(14);
+        myLinkedList1.append(15);
+        myLinkedList1.append(5);
+
         System.out.println("Original linked list: ");
         myLinkedList.printList();
 
+        System.out.println("Testing second linked list");
+        System.out.println("Original linked list: ");
+        myLinkedList1.printList();
+
+        System.out.println();
         // Reverse a sublist within the linked list
         myLinkedList.reverseBetween(1, 3);
         System.out.println("\nReversed sublist (1, 3): ");
         myLinkedList.printList();
+
+        System.out.println("Testing second linked list");
+        System.out.println("Original linked list: ");
+        myLinkedList1.printList();
 
         // Reverse another sublist within the linked list
         myLinkedList.reverseBetween(0, 4);

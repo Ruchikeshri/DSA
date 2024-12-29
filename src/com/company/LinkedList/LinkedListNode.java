@@ -1,7 +1,9 @@
 package com.company.LinkedList;
 
 
-    public class LinkedListNode {
+import java.util.LinkedHashMap;
+
+public class LinkedListNode {
 
         private ListNode head;
        private int length;
@@ -38,6 +40,7 @@ package com.company.LinkedList;
         }
 
         private void printList() {
+//            LinkedHashMap<> map
             ListNode current = head;
             while(current!=null){
                 System.out.print(current.value+"->");
@@ -76,6 +79,31 @@ package com.company.LinkedList;
 
         }
 
+    public ListNode oddEvenList(ListNode head) {
+
+//        ListNode dummyNode = new ListNode(0);
+//        dummyNode.next = head;
+
+//        ListNode oddPtr = dummyNode;
+//        ListNode evenPtr = dummyNode.next;
+
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even;
+
+        while (even!= null && even.next != null){
+            odd.next = even.next;
+            even = even.next;
+            even.next = odd.next;
+            odd = odd.next;
+
+        }
+
+
+
+        odd.next = evenHead;
+        return head;
+    }
 
 
         public static void main(String[] args) {
@@ -86,12 +114,15 @@ package com.company.LinkedList;
             myLinkedList.append(5);
 
 
-            System.out.println("Before Rotate");
+//            System.out.println("Before Rotate");
+            myLinkedList.oddEvenList(myLinkedList.head);
             myLinkedList.printList();
 
-            System.out.println("After Rotate");
-          myLinkedList.head =  myLinkedList.RotateList(myLinkedList.head,2);
-            myLinkedList.printList();
+
+
+//            System.out.println("After Rotate");
+//          myLinkedList.head =  myLinkedList.RotateList(myLinkedList.head,2);
+//            myLinkedList.printList();
         }
 
 

@@ -1,4 +1,4 @@
-        package com.company.SlidingWindow;
+package com.company.SlidingWindow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +46,7 @@ public class MaxSubArraySizeK {
             windowSum += num[i];
         }
         maxSum = windowSum;
-        for (int i = 0; i < num.length - k; i++) {
+        for (int i = 0; i < num.length - k; i++) { // if used <= then will give out of bounds for i+k
             windowSum = windowSum - num[i] + num[i + k];
             if (windowSum > maxSum) {
                 maxSum = Math.max(windowSum, maxSum);

@@ -7,6 +7,7 @@ public class LongestConsecutiveSequence {
     public static int longestConsecutiveSequence(int[] nums) {
         // Step 1: Create a HashSet to store all the unique numbers from the array.
         HashSet<Integer> set = new HashSet<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
         for (int num : nums) {
             set.add(num);
         }

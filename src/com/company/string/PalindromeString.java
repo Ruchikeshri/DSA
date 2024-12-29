@@ -14,14 +14,20 @@ public class PalindromeString {
 //            }
 //            start++;
 //            end--;
-        while(start<end){
-            if(c[start]!=c[end]){
+        while(start<end) {
+            if (c[start] != c[end]) {
                 return false;
             }
+
+            start++;
+            end--;
         }
-        start++;
-        end--;
         return true;
+    }
+
+    public static void main(String[] args) {
+        PalindromeString pl = new PalindromeString();
+        pl.isPalindrome("aba");
     }
 
     public String reverseWord(String str) {

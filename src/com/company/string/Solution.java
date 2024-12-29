@@ -1,6 +1,6 @@
 package com.company.string;
 
-class Solution {
+class MergeStringAlternatively {
     public static String mergeAlternately(String word1, String word2) {
 
      int lastIndex =0;
