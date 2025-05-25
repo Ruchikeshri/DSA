@@ -1,6 +1,8 @@
 package com.company.tree;
 
 
+import com.sun.source.tree.Tree;
+
 import java.util.Stack;
 
 public class BinaryTree {
@@ -80,8 +82,6 @@ public class BinaryTree {
     }
 
     public void inOrderIterative() {
-
-
         if (root == null) {
             return;
         }
@@ -98,6 +98,24 @@ public class BinaryTree {
             }
 
 
+        }
+    }
+
+    public void inorderIter(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+
+        while(!stack.isEmpty() || root!= null) {
+
+            while (root!=null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            root = stack.pop();
+//            System.out.println();
+//            System.out.printl("follow Inorder------->");
+            System.out.print(root.data+ " ,");
+            root = root.right;
         }
     }
         public void postOrderIterative(){
@@ -157,12 +175,16 @@ public class BinaryTree {
 
         bt.inOrder(bt.root);
         bt.inOrderIterative();
+        bt.inorderIter(bt.root);
 
         bt.postOrder(bt.root);
         bt.postOrderIterative();
 
         boolean isValid = bt.isValidBst(bt.root, Long.MIN_VALUE, Long.MAX_VALUE);
         System.out.println("Is Valid BST: " + isValid);
+
+
+
     }
 
 

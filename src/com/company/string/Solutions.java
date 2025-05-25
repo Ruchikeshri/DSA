@@ -88,7 +88,7 @@ class LongestPalindrome {
         }
 
         public static void main(String[] args) {
-            System.out.println(longestPalindrome("babad")); // Outputs "bab" or "aba"
+            System.out.println(longestPalindromes("babad")); // Outputs "bab" or "aba"
         }
     }
 

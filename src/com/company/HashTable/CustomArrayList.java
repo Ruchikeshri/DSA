@@ -126,4 +126,4 @@ private int size;
     private E elementData(int index) {
         return (E) elementData[index];
     }
-    }
+}

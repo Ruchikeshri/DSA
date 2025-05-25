@@ -124,7 +124,7 @@ public class MaxSubArraySizeK {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int k = 3;
 
-        System.out.println(maxSumSubarraySizeK(nums, k));
+//        System.out.println(maxSumSubarraySizeK(nums, k));
         System.out.println(maxSumSubarraySizeKPrefixSum(nums, k)); // Output: 24 (7+8+9)
         System.out.println(maxSumSubarraySizeKBruteForce(nums,k));
         System.out.println(maxSubarrayk(nums,k));

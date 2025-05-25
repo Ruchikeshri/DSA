@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class ReverseArray {
+
     public static void reverseArray(int arr[],int start,int end){
         while (start<end){
             int temp = arr[start];
@@ -43,5 +44,25 @@ public class ReverseArray {
         for(int k:arr){
             System.out.print(k+" ");
         }
+    }
+
+    public boolean isPalin(String s){
+        int start =0, end = s.length()-1;
+
+        while (start< end){
+
+            while(start<end && !Character.isAlphabetic(s.charAt(start))) start++;
+            while(start<end && !Character.isAlphabetic(s.charAt(end))) end--;
+
+            if(s.charAt(start)  != s.charAt(end)) return false;
+
+            start++;
+            end--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new ReverseArray().isPalin("MADA11M"));
     }
 }

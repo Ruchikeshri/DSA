@@ -13,7 +13,7 @@ public class MinimumSubArrayMatchingTarget {
 
             while(currentSum>=target){
                 minLengthSubArray = Math.min(minLengthSubArray, i - j + 1);
-                currentSum = currentSum - nums[i];
+                currentSum = currentSum - nums[j];
                 j++;
             }
 
