@@ -25,7 +25,7 @@ class SolutionPermute {
             }
 
             result.add(tempList);
-//           return;
+//            return;
         }
 
         for (int i = l; i < nums.length; i++) {
@@ -45,8 +45,8 @@ class SolutionPermute {
     }
 
     public static void main(String[] args) {
-//        System.out.println(new Solution().permute(new int[]{1,2,3}));
-        System.out.println(new SolutionPermute().subsets(new int[]{1, 2, 3}));
+        System.out.println(new SolutionPermute().permute(new int[]{1,2,3}));
+//        System.out.println(new SolutionPermute().subsets(new int[]{1, 2, 3}));
     }
 
     public List<List<Integer>> subsets(int[] nums) {

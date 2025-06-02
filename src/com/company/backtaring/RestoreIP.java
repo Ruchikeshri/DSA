@@ -23,22 +23,38 @@ public class RestoreIP {
     }
 
     private void backtrack(String s, int index, String path, int parts, List<String> res) {
-        if (parts == 4 && index == s.length()) {
-            res.add(path.substring(1)); // remove leading dot
+//        if (parts == 4 && index == s.length()) {
+//            res.add(path.substring(1)); // remove leading dot
+//            return;
+//        }
+//
+//        if (parts >= 4) return;
+//
+//        for (int len = 1; len <= 3 && index + len <= s.length(); len++) {
+//            String segment = s.substring(index, index + len);
+//
+//            if (segment.length() > 1 && segment.charAt(0) == '0') continue;
+//
+//            int num = Integer.parseInt(segment);
+//            if (num > 255) continue;
+//
+//            backtrack(s, index + len, path + "." + segment, parts + 1, res);
+//        }
+        if(parts == 4 && index == s.length()){
+            res.add(path.substring(1));
             return;
         }
+        for(int len=1;len<=3 && index+len<=s.length();len++){
+           String segment = s.substring(index,index+len);
 
-        if (parts >= 4) return;
+           if(segment.length()>1 && segment.charAt(0)=='0') continue;
 
-        for (int len = 1; len <= 3 && index + len <= s.length(); len++) {
-            String segment = s.substring(index, index + len);
+           Integer val = Integer.parseInt(segment);
 
-            if (segment.length() > 1 && segment.charAt(0) == '0') continue;
+           if(val>255) continue;
 
-            int num = Integer.parseInt(segment);
-            if (num > 255) continue;
+           backtrack(s,index+len,path+"."+segment,parts+1,res);
 
-            backtrack(s, index + len, path + "." + segment, parts + 1, res);
         }
     }
 

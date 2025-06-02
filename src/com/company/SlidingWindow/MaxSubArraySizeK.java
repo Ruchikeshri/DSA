@@ -87,7 +87,7 @@ public class MaxSubArraySizeK {
         }
 
         // Create prefix sum array
-        int[] prefixSum = new int[size + 1];
+        int[] prefixSum = new int[size + 1]; //0,1,2,3,4
         for (int i = 1; i <= size; i++) {
             prefixSum[i] = prefixSum[i - 1] + arr[i - 1];
         }

@@ -9,7 +9,6 @@ public class LISBinarySearch {
 
         for (int num : nums) {
             int left = 0, right = length - 1;
-            int pos = length;  // Default position to insert if no smaller tail is found
 
             while (left <= right) {
                 int mid = left + (right - left) / 2;
@@ -17,7 +16,6 @@ public class LISBinarySearch {
                 if (tails[mid] < num) {
                     left = mid + 1;
                 } else {
-                    pos = mid;       // potential position to replace
                     right = mid - 1;
                 }
             }
